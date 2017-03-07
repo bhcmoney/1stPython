@@ -1,12 +1,11 @@
 from time import sleep
 import RPi.GPIO as GPIO
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
 
-switch = 17
-
-GPIO.setup(switch, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(11, GPIO.IN)
 
 while True:
-	print("switch: ", GPIO.input(switch))
-	sleep(1)
+      print GPIO.input(11) 
+      time.sleep(.5)
